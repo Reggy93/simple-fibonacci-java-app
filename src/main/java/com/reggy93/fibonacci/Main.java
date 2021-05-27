@@ -23,7 +23,7 @@ public class Main {
 
         try {
             final int fibonacciValue = fibonacciCounter.countFibonacciValueForIndex(Integer.parseInt(args[0]));
-            LOG.info(logMessage("Counted value for provided index is", fibonacciValue));
+            LOG.info(logMessage("Counted Fibonacci value for provided index is:", fibonacciValue));
         } catch (UnsupportedIndexValueException e) {
             LOG.severe(() -> String.format("%s %s", "Following error occurred while trying to count Fibonacci value:"
                     , e));
