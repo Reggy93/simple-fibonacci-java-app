@@ -21,7 +21,7 @@ public class FibonacciCounterImpl implements FibonacciCounter {
             throw new UnsupportedIndexValueException("Provided index is < 0 - cannot count Fibonacci value!");
         }
 
-        LOG.info(() -> String.format("%s [%s]", "Calculating Fibonacci value for index", index));
+        LOG.finer(() -> String.format("%s [%s]", "Calculating Fibonacci value for index", index));
 
         if (index == 0) {
             return 0;
