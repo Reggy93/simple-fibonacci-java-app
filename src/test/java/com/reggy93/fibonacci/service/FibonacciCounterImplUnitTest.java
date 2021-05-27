@@ -35,21 +35,21 @@ class FibonacciCounterImplUnitTest {
 
 
     @Test
-    void countFibonacciValueForIndexEqualTo0ShouldReturn0() {
+    void countFibonacciValueForIndexEqualTo0ShouldReturn0() throws UnsupportedIndexValueException {
 
         assertThat(testedCounter.countFibonacciValueForIndex(0), is(0));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2})
-    void countFibonacciValueForIndexEqualTo1Or2ShouldReturn1(int index) {
+    void countFibonacciValueForIndexEqualTo1Or2ShouldReturn1(int index) throws UnsupportedIndexValueException {
 
         assertThat(testedCounter.countFibonacciValueForIndex(index), is(1));
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/fibonacci-matrix.csv", numLinesToSkip = 1)
-    void countFibonacciValueAccordingToTheProvidedMatrix(int index, int expectedValue) {
+    void countFibonacciValueAccordingToTheProvidedMatrix(int index, int expectedValue) throws UnsupportedIndexValueException {
 
         assertThat(testedCounter.countFibonacciValueForIndex(index), is(expectedValue));
     }
